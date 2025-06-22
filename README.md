@@ -1,68 +1,12 @@
-# CreditCardFraudDetector
-
 🛡️ Credit Card Fraud Detection
-A machine learning project using logistic regression to identify fraudulent credit card transactions with high accuracy on a real-world dataset.
+This project focuses on building a machine learning model to detect fraudulent credit card transactions using logistic regression. The model was trained and evaluated on a real-world dataset consisting of 284,807 transactions, with only 492 labeled as fraud—making this a classic case of working with imbalanced data.
 
-📊 Project Overview
-This project analyzes and models credit card transactions to detect fraud using a binary classification approach. The dataset is highly imbalanced, containing 284,807 transactions with only 492 fraud cases. The goal is to build a model that can accurately distinguish between legit and fraudulent activity.
+The dataset was preprocessed using Pandas and NumPy. After checking for missing values and exploring the distribution of fraud versus legitimate transactions, the dataset was balanced using random undersampling. This technique helped ensure that the model wasn't biased toward the majority class.
 
-✅ Key Features
-Trained a logistic regression model with 92.89% test accuracy
+An 80/20 stratified train-test split was applied to preserve class distribution across both training and testing datasets. The logistic regression model was trained using scikit-learn with a high iteration limit to ensure convergence. The resulting model achieved a training accuracy of approximately 95.81% and a test accuracy of 92.89%, demonstrating its ability to generalize well on unseen data.
 
-Handled class imbalance using random undersampling
+Feature-wise, the dataset contained anonymized numerical values (V1 to V28), along with Time and Amount. The Class column served as the target variable, indicating whether a transaction was fraudulent (1) or legitimate (0).
 
-Applied Pandas and NumPy for data preprocessing
+This project highlights fundamental machine learning practices including model evaluation, dealing with class imbalance, and performance validation using metrics like accuracy score. Future improvements may include the use of techniques such as SMOTE (Synthetic Minority Over-sampling Technique), trying alternative models like Random Forest or XGBoost, and calculating additional evaluation metrics such as precision, recall, and F1-score. Deploying the model via Flask or Streamlit for interactive use could also enhance its practical value.
 
-Used stratified 80/20 train-test split to preserve label ratios
-
-Evaluated performance using accuracy score
-
-Compared fraud vs legit statistics to explore patterns and differences
-
-🧠 Technologies Used
-Python
-
-Pandas, NumPy – Data manipulation and cleaning
-
-scikit-learn – Model training and evaluation
-
-(Optional:) Matplotlib/Seaborn – For visualizations (if used)
-
-📁 Dataset
-Dataset: Kaggle Credit Card Fraud Detection
-
-Features: 30 anonymized numerical features (V1–V28, Time, Amount)
-
-Target: Class (0 = Legit, 1 = Fraud)
-
-⚙️ How It Works
-Load and inspect the dataset
-
-Explore class imbalance and analyze fraud patterns
-
-Undersample legit transactions to match the number of frauds
-
-Split data using train_test_split with stratify
-
-Train logistic regression model with max_iter=10000
-
-Evaluate performance on both training and test sets
-
-📌 Results
-Training Accuracy: 95.81%
-
-Test Accuracy: 92.89%
-
-Fraud detection model performs well after class balancing, showing strong ability to generalize
-
-🧩 Future Improvements
-Use SMOTE or ensemble methods for more advanced balancing
-
-Try other models: Random Forest, XGBoost, or Neural Networks
-
-Add precision, recall, F1-score, and confusion matrix for deeper evaluation
-
-Deploy using Flask or Streamlit for interactive predictions
-
-📜 License
-MIT License
+The dataset used is available on Kaggle. This project was completed using Python, along with libraries including Pandas, NumPy, and scikit-learn.
